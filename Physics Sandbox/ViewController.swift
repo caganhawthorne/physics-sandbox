@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var masterBrick: UIView!
     @IBOutlet weak var masterSquare: UIView!
     
+    var itemsArray : [UIView] = []
     
     
     override func viewDidLoad() {
@@ -36,10 +37,28 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func onObjectDragged(sender: UIPanGestureRecognizer) {
+        let panGesture = sender.locationInView(buildView)
 
-    //override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        //let dvc = segue.destinationViewController as! PlayModeViewController
-    //}
+        if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
+            while(sender.state != UIGestureRecognizerState.Ended) {
+                masterBall.center = CGPointMake(panGesture.x, panGesture.y)
+            }
+            //masterBall.center =
+            let ball = Ball(x: panGesture.x, y: panGesture.y)
+            itemsArray.append(ball)
+            buildView.addSubview(ball)
+            
+        }
+    }
+    
+    
+    
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let dvc = segue.destinationViewController as! PlayModeViewController
+        //dvc.
+    }
 
 
 }
