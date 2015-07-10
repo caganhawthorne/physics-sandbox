@@ -19,7 +19,9 @@ class Ball: UIView {
         self.backgroundColor = UIColor.purpleColor()
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
+        
         ballDynamicBehavior = UIDynamicItemBehavior(items: [self])
+        
         ballDynamicBehavior.friction = 0.1
         ballDynamicBehavior.resistance = 1
         ballDynamicBehavior.elasticity = 1.0
