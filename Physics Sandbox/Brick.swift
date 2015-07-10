@@ -13,6 +13,10 @@ class Brick : UIView {
     
     var brickDynamicBehavior = UIDynamicItemBehavior()
     
+    var elasticity = 1.0
+    var density = 5
+    var resistance = 5
+    var friction = 1
     
     init(x: CGFloat, y: CGFloat)
     {
