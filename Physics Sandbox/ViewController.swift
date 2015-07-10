@@ -29,6 +29,7 @@ class ViewController: UIViewController {
         masterBall.layer.cornerRadius = 10
         masterBall.clipsToBounds = true
         
+        masterBrick.backgroundColor = UIColor.redColor()
         masterSquare.backgroundColor = UIColor.blueColor()
 
 

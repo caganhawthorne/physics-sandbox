@@ -16,8 +16,8 @@ class Brick : UIView {
     
     init(x: CGFloat, y: CGFloat)
     {
-        super.init(frame: CGRectMake(x, y, 20, 40))
-        self.backgroundColor = UIColor.blueColor()
+        super.init(frame: CGRectMake(x, y, 40, 20))
+        self.backgroundColor = UIColor.redColor()
         //self.layer.cornerRadius = 10
         self.clipsToBounds = true
         brickDynamicBehavior = UIDynamicItemBehavior(items: [self])
