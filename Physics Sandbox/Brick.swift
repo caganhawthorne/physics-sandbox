@@ -22,7 +22,7 @@ class Brick : UIView {
         self.clipsToBounds = true
         brickDynamicBehavior = UIDynamicItemBehavior(items: [self])
         brickDynamicBehavior.friction = 0.1
-        brickDynamicBehavior.resistance = 1
+        brickDynamicBehavior.resistance = 5
         brickDynamicBehavior.elasticity = 1.0
         brickDynamicBehavior.density = 5
         brickDynamicBehavior.allowsRotation = true
