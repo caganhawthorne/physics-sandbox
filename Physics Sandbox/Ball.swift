@@ -12,6 +12,10 @@ class Ball: UIView {
     
     var ballDynamicBehavior = UIDynamicItemBehavior()
     
+    var elasticity = 1.0
+    var density = 1
+    var resistance = 1
+    var friction = 0.1
     
     init(x: CGFloat, y: CGFloat)
     {
@@ -22,10 +26,10 @@ class Ball: UIView {
         
         ballDynamicBehavior = UIDynamicItemBehavior(items: [self])
         
-        ballDynamicBehavior.friction = 0.1
-        ballDynamicBehavior.resistance = 1
-        ballDynamicBehavior.elasticity = 1.0
-        ballDynamicBehavior.density = 1
+        ballDynamicBehavior.friction = CGFloat(friction)
+        ballDynamicBehavior.resistance = CGFloat(resistance)
+        ballDynamicBehavior.elasticity = CGFloat(elasticity)
+        ballDynamicBehavior.density = CGFloat(density)
         ballDynamicBehavior.allowsRotation = false
         
     }
