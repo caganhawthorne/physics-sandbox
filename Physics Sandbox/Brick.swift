@@ -13,6 +13,10 @@ class Brick : UIView {
     
     var brickDynamicBehavior = UIDynamicItemBehavior()
     
+    var elasticity = 1.0
+    var density = 5
+    var resistance = 5
+    var friction = 1
     
     init(x: CGFloat, y: CGFloat)
     {
@@ -21,10 +25,10 @@ class Brick : UIView {
         //self.layer.cornerRadius = 10
         self.clipsToBounds = true
         brickDynamicBehavior = UIDynamicItemBehavior(items: [self])
-        brickDynamicBehavior.friction = 0.1
-        brickDynamicBehavior.resistance = 5
-        brickDynamicBehavior.elasticity = 1.0
-        brickDynamicBehavior.density = 5
+        brickDynamicBehavior.friction = CGFloat(friction)
+        brickDynamicBehavior.resistance = CGFloat(resistance)
+        brickDynamicBehavior.elasticity = CGFloat(elasticity)
+        brickDynamicBehavior.density = CGFloat(density)
         brickDynamicBehavior.allowsRotation = true
         
     }
