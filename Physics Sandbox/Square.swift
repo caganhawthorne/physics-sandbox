@@ -22,6 +22,7 @@ class Square: UIView {
         squareBehaviors.density = 100
         squareBehaviors.resistance = 10
         squareBehaviors.friction = 1
+        print("square test")
     }
     
     required init(coder aDecoder: NSCoder) {
