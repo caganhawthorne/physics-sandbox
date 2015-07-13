@@ -18,7 +18,7 @@ class PlayModeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         for index in allObjects {
-            dynamicAnimator.addBehavior(index.dynamicBehavior)
+        dynamicAnimator.addBehavior(index.dynamicBehavior)
         }
     }
 

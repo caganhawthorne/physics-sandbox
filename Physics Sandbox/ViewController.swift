@@ -12,32 +12,31 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var optionsView: UIView!
     
-    
     @IBOutlet weak var buildView: UIView!
     
     @IBOutlet weak var masterBall: UIView!
+    
     @IBOutlet weak var masterBrick: UIView!
+    
     @IBOutlet weak var masterSquare: UIView!
+    
+    
     
     var ballSelected = false
     var brickSelected = false
     var squareSelected = false
-    
     var itemsArray : [UIView] = []
     
     
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
         masterBall.backgroundColor = UIColor.purpleColor()
         masterBall.layer.cornerRadius = 10
         masterBall.clipsToBounds = true
         
         masterBrick.backgroundColor = UIColor.redColor()
         masterSquare.backgroundColor = UIColor.blueColor()
-
-
     }
     
     
@@ -45,7 +44,7 @@ class ViewController: UIViewController {
     
 
     if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
-        if masterBall.backgroundColor == UIColor.purpleColor() {
+        if masterBall.backgroundColor == UIColor.purpleColor() && (!squareSelected && !brickSelected) {
             masterBall.backgroundColor = UIColor.yellowColor()
             ballSelected = true
         }
@@ -55,6 +54,38 @@ class ViewController: UIViewController {
         }
         
     }
+        
+        if CGRectContainsPoint(masterBrick.frame, sender.locationInView(optionsView)) {
+            if masterBrick.backgroundColor == UIColor.redColor() && (!squareSelected && !ballSelected) {
+                masterBrick.backgroundColor = UIColor.yellowColor()
+                brickSelected = true
+            }
+            else{
+                masterBrick.backgroundColor = UIColor.redColor()
+                brickSelected = false
+            }
+            
+        }
+        if CGRectContainsPoint(masterSquare.frame, sender.locationInView(optionsView)) {
+            if masterSquare.backgroundColor == UIColor.blueColor() && (!ballSelected && !brickSelected) {
+                masterSquare.backgroundColor = UIColor.yellowColor()
+                squareSelected = true
+            }
+            else{
+                masterSquare.backgroundColor = UIColor.blueColor()
+                squareSelected = false
+            }
+            
+        }
+
+        
+        
+        
+        
+        
+        
+        
+        
         if CGRectContainsPoint(buildView.frame, sender.locationInView(view)) {
             let tapGesture = sender.locationInView(view)
 
@@ -77,6 +108,20 @@ class ViewController: UIViewController {
     }
     
     
+    @IBAction func resetButtonTapped(sender: UIButton) {
+        for e in itemsArray {
+            e.removeFromSuperview()
+        }
+        ballSelected = false
+        brickSelected = false
+        squareSelected = false
+        masterBrick.backgroundColor = UIColor.redColor()
+        masterSquare.backgroundColor = UIColor.blueColor()
+        masterBall.backgroundColor = UIColor.purpleColor()
+        itemsArray.removeAll()
+        
+        
+    }
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
