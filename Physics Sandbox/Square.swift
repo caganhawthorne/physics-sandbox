@@ -13,7 +13,6 @@ class Square: UIView {
     var dynamicBehavior = UIDynamicItemBehavior()
     var square = UIView()
     
-    
     var elasticity = 1.0
     var density = 100
     var resistance = 10
@@ -34,5 +33,4 @@ class Square: UIView {
     required init(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-
 }
