@@ -45,6 +45,10 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
        
     }
     @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
-        
+        self.view.bringSubviewToFront(sender.view!)
+        let translation = sender.translationInView(self.view!)
+        sender.view!.center = CGPointMake(sender.view!.center.x + translation.x, sender.view!.center.y + translation.y)
+        sender.setTranslation(CGPointZero, inView: self.view!)
     }
+
 }
