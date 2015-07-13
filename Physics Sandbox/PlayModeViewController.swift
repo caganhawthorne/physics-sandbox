@@ -44,7 +44,4 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         }
 
     }
-
-
-
 }

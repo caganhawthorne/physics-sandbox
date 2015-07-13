@@ -44,7 +44,8 @@ class ViewController: UIViewController {
     
 
     if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
-        if masterBall.backgroundColor == UIColor.purpleColor() && (!squareSelected && !brickSelected) {
+        if masterBall.backgroundColor == UIColor.purpleColor() {
+            resetMenu()
             masterBall.backgroundColor = UIColor.yellowColor()
             ballSelected = true
         }
@@ -56,7 +57,8 @@ class ViewController: UIViewController {
     }
         
         if CGRectContainsPoint(masterBrick.frame, sender.locationInView(optionsView)) {
-            if masterBrick.backgroundColor == UIColor.redColor() && (!squareSelected && !ballSelected) {
+            if masterBrick.backgroundColor == UIColor.redColor() {
+                resetMenu()
                 masterBrick.backgroundColor = UIColor.yellowColor()
                 brickSelected = true
             }
@@ -67,7 +69,8 @@ class ViewController: UIViewController {
             
         }
         if CGRectContainsPoint(masterSquare.frame, sender.locationInView(optionsView)) {
-            if masterSquare.backgroundColor == UIColor.blueColor() && (!ballSelected && !brickSelected) {
+            if masterSquare.backgroundColor == UIColor.blueColor() {
+                resetMenu()
                 masterSquare.backgroundColor = UIColor.yellowColor()
                 squareSelected = true
             }
@@ -90,18 +93,18 @@ class ViewController: UIViewController {
             let tapGesture = sender.locationInView(view)
 
             if ballSelected {
-                let ball = Ball(x: tapGesture.x, y: tapGesture.y)
-                view.addSubview(ball)
+                let ball = Ball(x: CGFloat(tapGesture.x-10), y: CGFloat(tapGesture.y-20))
+                buildView.addSubview(ball)
                 itemsArray.append(ball)
             }
             else if brickSelected {
-                let brick = Brick(x: tapGesture.x, y: tapGesture.y)
-                view.addSubview(brick)
+                let brick = Brick(x: CGFloat(tapGesture.x-20), y: CGFloat(tapGesture.y-20))
+                buildView.addSubview(brick)
                 itemsArray.append(brick)
             }
             else if squareSelected {
-                let square = Square(x: tapGesture.x, y: tapGesture.y)
-                view.addSubview(square)
+                let square = Square(x: CGFloat(tapGesture.x-37), y: CGFloat(tapGesture.y-75))
+                buildView.addSubview(square)
                 itemsArray.append(square)
             }
         }
@@ -112,14 +115,19 @@ class ViewController: UIViewController {
         for e in itemsArray {
             e.removeFromSuperview()
         }
+        resetMenu()
+        itemsArray.removeAll()
+        
+        
+    }
+    
+    func resetMenu() {
         ballSelected = false
         brickSelected = false
         squareSelected = false
         masterBrick.backgroundColor = UIColor.redColor()
         masterSquare.backgroundColor = UIColor.blueColor()
         masterBall.backgroundColor = UIColor.purpleColor()
-        itemsArray.removeAll()
-        
         
     }
     
