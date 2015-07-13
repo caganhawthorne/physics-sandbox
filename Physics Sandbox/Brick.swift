@@ -9,21 +9,25 @@
 import Foundation
 import UIKit
 
-class Brick : UIView {
+class Brick : Item {
     
-    var dynamicBehavior = UIDynamicItemBehavior()
+
     
     var elasticity = 1.0
     var density = 5
     var resistance = 5
     var friction = 1
     
+    override
     init(x: CGFloat, y: CGFloat)
     {
-        super.init(frame: CGRectMake(x, y, 40, 20))
+        super.init(x: x, y: y)
         self.backgroundColor = UIColor.redColor()
         //self.layer.cornerRadius = 10
         self.clipsToBounds = true
+        
+        var dynamicBehavior = UIDynamicItemBehavior(items: [self])
+        
         dynamicBehavior = UIDynamicItemBehavior(items: [self])
         dynamicBehavior.friction = CGFloat(friction)
         dynamicBehavior.resistance = CGFloat(resistance)

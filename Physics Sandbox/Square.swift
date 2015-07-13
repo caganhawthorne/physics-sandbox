@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Square: UIView {
+class Square: Item {
 
-    var dynamicBehavior = UIDynamicItemBehavior()
+    
     var square = UIView()
     
     var elasticity = 1.0
@@ -18,11 +18,15 @@ class Square: UIView {
     var resistance = 10
     var friction = 1
     
+    override
     init(x: CGFloat, y: CGFloat) {
-        super.init(frame: CGRectMake(x, y, 75, 75))
+        super.init(x: x, y: y)
         self.backgroundColor = UIColor.blueColor()
+        
+        var dynamicBehavior = UIDynamicItemBehavior(items: [self])
         dynamicBehavior = UIDynamicItemBehavior(items: [self])
         dynamicBehavior.allowsRotation = true
+        
         dynamicBehavior.elasticity = CGFloat(elasticity)
         dynamicBehavior.density = CGFloat(density)
         dynamicBehavior.resistance = CGFloat(resistance)
