@@ -44,7 +44,7 @@ class ViewController: UIViewController {
     @IBAction func screenIsTapped(sender: UITapGestureRecognizer) {
     
 
-    if CGRectContainsPoint(masterBall.frame, sender.locationInView(view)) {
+    if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
         if masterBall.backgroundColor == UIColor.purpleColor() {
             masterBall.backgroundColor = UIColor.yellowColor()
             ballSelected = true
