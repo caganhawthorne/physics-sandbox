@@ -31,6 +31,10 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for i in savedItemsArray.items {
+            view.addSubview(i)
+        }
+        
         masterBall.backgroundColor = UIColor.purpleColor()
         masterBall.layer.cornerRadius = 10
         masterBall.clipsToBounds = true
@@ -133,11 +137,15 @@ class ViewController: UIViewController {
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        savedItemsArray.items = itemsArray
+
         let dvc = segue.destinationViewController as! PlayModeViewController
-        for item in itemsArray {
-            dvc.allObjects = itemsArray
+     
+        dvc.allObjects = itemsArray
+        
+
+        
         }
-    }
 
 
 }

@@ -20,6 +20,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         dynamicAnimator = UIDynamicAnimator(referenceView: view)
 
         for index in allObjects {
@@ -46,9 +47,14 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
 
 
         gravity = UIGravityBehavior(items: allObjects)
+        gravity.removeItem(<#T##item: UIDynamicItem##UIDynamicItem#>)
         dynamicAnimator.addBehavior(gravity)
         
         print("\(allObjects.count)")
        
     }
+
+
+    
+
 }
