@@ -94,16 +94,16 @@ class ViewController: UIViewController {
 
             if ballSelected {
                 let ball = Ball(x: CGFloat(tapGesture.x-10), y: CGFloat(tapGesture.y-10))
-                view.addSubview(ball)
+                buildView.addSubview(ball)
                 itemsArray.append(ball)
             }
             else if brickSelected {
                 let brick = Brick(x: CGFloat(tapGesture.x-20), y: CGFloat(tapGesture.y-10))
-                view.addSubview(brick)
+                buildView.addSubview(brick)
                 itemsArray.append(brick)
             }
             else if squareSelected {
-                let square = Square(x: tapGesture.x, y: tapGesture.y)
+                let square = Square(x: CGFloat(tapGesture.x-37), y: CGFloat(tapGesture.y-37))
                 buildView.addSubview(square)
                 itemsArray.append(square)
             }
