@@ -11,7 +11,7 @@ import UIKit
 class PlayModeViewController: UIViewController {
     
     var dynamicAnimator = UIDynamicAnimator()
-    var allObjects : [UIView] = []
+    var allObjects : [Item] = []
     
 
     

@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     var brickSelected = false
     var squareSelected = false
     
-    var itemsArray : [UIView] = []
+    var itemsArray : [Item] = []
     
     
     override func viewDidLoad() {
