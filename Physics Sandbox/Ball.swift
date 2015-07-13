@@ -17,11 +17,11 @@ class Ball: Item {
     var resistance = 1
     var friction = 0.1
     
-    override
+    
     init(x: CGFloat, y: CGFloat)
     {
         
-        super.init(x: x,y: y)
+        super.init(x: x,y: y, h: 20, w: 20)
         self.backgroundColor = UIColor.purpleColor()
         self.layer.cornerRadius = 10
         self.clipsToBounds = true

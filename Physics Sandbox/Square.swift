@@ -18,9 +18,9 @@ class Square: Item {
     var resistance = 10
     var friction = 1
     
-    override
+    
     init(x: CGFloat, y: CGFloat) {
-        super.init(x: x, y: y)
+        super.init(x: x, y: y, h: 75, w: 75)
         self.backgroundColor = UIColor.blueColor()
         
         var dynamicBehavior = UIDynamicItemBehavior(items: [self])

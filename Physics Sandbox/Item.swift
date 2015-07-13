@@ -13,9 +13,9 @@ class  Item : UIView {
     
     var dynamicBehavior = UIDynamicItemBehavior()
     
-    init(x: CGFloat, y: CGFloat)
+    init(x: CGFloat, y: CGFloat, h: CGFloat, w: CGFloat)
     {
-        super.init(frame: CGRectMake(x, y, 20, 20))
+        super.init(frame: CGRectMake(x, y, h, w))
         
     }
     

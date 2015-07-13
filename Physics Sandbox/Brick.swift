@@ -18,10 +18,10 @@ class Brick : Item {
     var resistance = 5
     var friction = 1
     
-    override
+    
     init(x: CGFloat, y: CGFloat)
     {
-        super.init(x: x, y: y)
+        super.init(x: x, y: y, h: 40, w: 20)
         self.backgroundColor = UIColor.redColor()
         //self.layer.cornerRadius = 10
         self.clipsToBounds = true
