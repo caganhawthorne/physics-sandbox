@@ -13,10 +13,10 @@ class Brick : Item {
     
 
     
-    var elasticity = 1.0
-    var density = 5
-    var resistance = 5
-    var friction = 1
+    var elasticity = 2.0
+    var density = 3
+    var resistance = 0.5
+    var friction = 0.5
     
     
     init(x: CGFloat, y: CGFloat)

@@ -27,8 +27,11 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         for index in allObjects {
             dynObjects.append(index)
             view.addSubview(index)
+            dynamicAnimator.addBehavior(index.dynamicBehavior)
+
 
         }
+        
         collisionBehavior = UICollisionBehavior(items: allObjects)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
@@ -53,11 +56,28 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         //motionManager.startAccelerometerUpdatesToQueue(<#T##queue: NSOperationQueue##NSOperationQueue#>, withHandler: gravityUpdated(CMDeviceMotion, error: NSError.self))
        
     }
+    var item : Item!
+
     @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
-        self.view.bringSubviewToFront(sender.view!)
-        let translation = sender.translationInView(self.view!)
-        sender.view!.center = CGPointMake(sender.view!.center.x + translation.x, sender.view!.center.y + translation.y)
-        sender.setTranslation(CGPointZero, inView: self.view!)
+        
+        
+        if (sender.state == UIGestureRecognizerState.Began) {
+            
+            for i in allObjects {
+                if CGRectContainsPoint(i.frame, sender.locationInView(view)) {
+                item = i
+                }
+            }
+        }
+        
+
+            if let a = item {
+                let panGesture = sender.locationInView(view)
+                a.center = CGPointMake(panGesture.x, panGesture.y)
+                dynamicAnimator.updateItemUsingCurrentState(a)
+            }
+
+        }
     }
     
     func gravityUpdated(motion: CMDeviceMotion!, error: NSError!) {
@@ -91,4 +111,4 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         gravity.gravityDirection = v;
     }
 
-}
+
