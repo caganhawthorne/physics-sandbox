@@ -39,9 +39,10 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             collisionBehavior.addItem(index)
         }
         
+        
         let pushBehavior = UIPushBehavior(items: allObjects, mode: UIPushBehaviorMode.Continuous)
         pushBehavior.pushDirection = CGVectorMake(0, 4.71238898038)
-        pushBehavior.magnitude = 5
+        pushBehavior.magnitude = 2
         dynamicAnimator.addBehavior(pushBehavior)
         
         
