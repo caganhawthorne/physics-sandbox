@@ -14,8 +14,8 @@ class Ball: Item {
     
     var elasticity = 1.0
     var density = 1
-    var resistance = 0.5
-    var friction = 0.5
+    var resistance = 1
+    var friction = 1
     
     
     init(x: CGFloat, y: CGFloat)

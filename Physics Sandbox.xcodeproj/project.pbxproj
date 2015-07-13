@@ -12,7 +12,6 @@
 		CF6800AE1B504BEA007D3424 /* Square.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF6800AD1B504BEA007D3424 /* Square.swift */; };
 		EF5406031B502CD70069C5D4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406021B502CD70069C5D4 /* AppDelegate.swift */; };
 		EF5406051B502CD70069C5D4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406041B502CD70069C5D4 /* ViewController.swift */; };
-		EF5406081B502CD70069C5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5406061B502CD70069C5D4 /* Main.storyboard */; };
 		EF54060A1B502CD70069C5D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF5406091B502CD70069C5D4 /* Assets.xcassets */; };
 		EF54060D1B502CD70069C5D4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF54060B1B502CD70069C5D4 /* LaunchScreen.storyboard */; };
 		EF5406181B502CD70069C5D4 /* Physics_SandboxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406171B502CD70069C5D4 /* Physics_SandboxTests.swift */; };
@@ -20,6 +19,7 @@
 		EF5406311B50375A0069C5D4 /* PlayModeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */; };
 		EF5406331B5045080069C5D4 /* Ball.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406321B5045080069C5D4 /* Ball.swift */; };
 		EF5406351B5420980069C5D4 /* ItemsArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF5406341B5420980069C5D4 /* ItemsArray.swift */; };
+		EF5406371B5441BB0069C5D4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF5406361B5441BB0069C5D4 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +46,6 @@
 		EF5405FF1B502CD60069C5D4 /* Physics Sandbox.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Physics Sandbox.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5406021B502CD70069C5D4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF5406041B502CD70069C5D4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EF5406071B502CD70069C5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF5406091B502CD70069C5D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF54060C1B502CD70069C5D4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF54060E1B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,6 +58,7 @@
 		EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayModeViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EF5406321B5045080069C5D4 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 		EF5406341B5420980069C5D4 /* ItemsArray.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemsArray.swift; sourceTree = "<group>"; };
+		EF5406361B5441BB0069C5D4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = ../../../../../Downloads/Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +114,7 @@
 				EF5406341B5420980069C5D4 /* ItemsArray.swift */,
 				CF6800AD1B504BEA007D3424 /* Square.swift */,
 				1F9C898A1B5045D4008C880C /* Brick.swift */,
-				EF5406061B502CD70069C5D4 /* Main.storyboard */,
+				EF5406361B5441BB0069C5D4 /* Main.storyboard */,
 				EF5406321B5045080069C5D4 /* Ball.swift */,
 				EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */,
 				1F980E4F1B5403E5003F92D6 /* Item.swift */,
@@ -246,9 +246,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF5406371B5441BB0069C5D4 /* Main.storyboard in Resources */,
 				EF54060D1B502CD70069C5D4 /* LaunchScreen.storyboard in Resources */,
 				EF54060A1B502CD70069C5D4 /* Assets.xcassets in Resources */,
-				EF5406081B502CD70069C5D4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,14 +316,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EF5406061B502CD70069C5D4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EF5406071B502CD70069C5D4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EF54060B1B502CD70069C5D4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
