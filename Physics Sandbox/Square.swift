@@ -10,7 +10,7 @@ import UIKit
 
 class Square: UIView {
 
-    var squareBehaviors = UIDynamicItemBehavior()
+    var dynamicBehavior = UIDynamicItemBehavior()
     var square = UIView()
     
     
@@ -22,12 +22,12 @@ class Square: UIView {
     init(x: CGFloat, y: CGFloat) {
         super.init(frame: CGRectMake(x, y, 75, 75))
         self.backgroundColor = UIColor.blueColor()
-        squareBehaviors = UIDynamicItemBehavior(items: [self])
-        squareBehaviors.allowsRotation = true
-        squareBehaviors.elasticity = CGFloat(elasticity)
-        squareBehaviors.density = CGFloat(density)
-        squareBehaviors.resistance = CGFloat(resistance)
-        squareBehaviors.friction = CGFloat(friction)
+        dynamicBehavior = UIDynamicItemBehavior(items: [self])
+        dynamicBehavior.allowsRotation = true
+        dynamicBehavior.elasticity = CGFloat(elasticity)
+        dynamicBehavior.density = CGFloat(density)
+        dynamicBehavior.resistance = CGFloat(resistance)
+        dynamicBehavior.friction = CGFloat(friction)
         print("square test")
     }
     

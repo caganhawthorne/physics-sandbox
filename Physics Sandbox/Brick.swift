@@ -11,7 +11,7 @@ import UIKit
 
 class Brick : UIView {
     
-    var brickDynamicBehavior = UIDynamicItemBehavior()
+    var dynamicBehavior = UIDynamicItemBehavior()
     
     var elasticity = 1.0
     var density = 5
@@ -24,12 +24,12 @@ class Brick : UIView {
         self.backgroundColor = UIColor.redColor()
         //self.layer.cornerRadius = 10
         self.clipsToBounds = true
-        brickDynamicBehavior = UIDynamicItemBehavior(items: [self])
-        brickDynamicBehavior.friction = CGFloat(friction)
-        brickDynamicBehavior.resistance = CGFloat(resistance)
-        brickDynamicBehavior.elasticity = CGFloat(elasticity)
-        brickDynamicBehavior.density = CGFloat(density)
-        brickDynamicBehavior.allowsRotation = true
+        dynamicBehavior = UIDynamicItemBehavior(items: [self])
+        dynamicBehavior.friction = CGFloat(friction)
+        dynamicBehavior.resistance = CGFloat(resistance)
+        dynamicBehavior.elasticity = CGFloat(elasticity)
+        dynamicBehavior.density = CGFloat(density)
+        dynamicBehavior.allowsRotation = true
         
     }
     

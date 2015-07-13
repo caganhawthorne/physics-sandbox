@@ -10,7 +10,7 @@ import UIKit
 
 class Ball: UIView {
     
-    var ballDynamicBehavior = UIDynamicItemBehavior()
+    var dynamicBehavior = UIDynamicItemBehavior()
     
     var elasticity = 1.0
     var density = 1
@@ -24,13 +24,13 @@ class Ball: UIView {
         self.layer.cornerRadius = 10
         self.clipsToBounds = true
         
-        ballDynamicBehavior = UIDynamicItemBehavior(items: [self])
+        dynamicBehavior = UIDynamicItemBehavior(items: [self])
         
-        ballDynamicBehavior.friction = CGFloat(friction)
-        ballDynamicBehavior.resistance = CGFloat(resistance)
-        ballDynamicBehavior.elasticity = CGFloat(elasticity)
-        ballDynamicBehavior.density = CGFloat(density)
-        ballDynamicBehavior.allowsRotation = false
+        dynamicBehavior.friction = CGFloat(friction)
+        dynamicBehavior.resistance = CGFloat(resistance)
+        dynamicBehavior.elasticity = CGFloat(elasticity)
+        dynamicBehavior.density = CGFloat(density)
+        dynamicBehavior.allowsRotation = false
         
     }
 

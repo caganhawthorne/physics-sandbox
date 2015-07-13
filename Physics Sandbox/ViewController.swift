@@ -63,6 +63,16 @@ class ViewController: UIViewController {
                 view.addSubview(ball)
                 itemsArray.append(ball)
             }
+            else if brickSelected {
+                let brick = Brick(x: tapGesture.x, y: tapGesture.y)
+                view.addSubview(brick)
+                itemsArray.append(brick)
+            }
+            else if squareSelected {
+                let square = Square(x: tapGesture.x, y: tapGesture.y)
+                view.addSubview(square)
+                itemsArray.append(square)
+            }
         }
     }
     
