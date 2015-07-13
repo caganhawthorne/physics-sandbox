@@ -26,7 +26,4 @@ class PlayModeViewController: UIViewController {
         }
         
     }
-
-
-
 }
