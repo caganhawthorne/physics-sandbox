@@ -28,23 +28,14 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             view.addSubview(index)
 
         }
-        for i in allObjects{
-            dynamicAnimator.addBehavior(i.dynamicBehavior)
-        }
-
-        
-        
-        let items : [UIView] = allObjects
-
-        
-        collisionBehavior = UICollisionBehavior(items: items)
-        
+        collisionBehavior = UICollisionBehavior(items: allObjects)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
         collisionBehavior.collisionDelegate = self
-        
         dynamicAnimator.addBehavior(collisionBehavior)
-
+        for index in allObjects {
+            collisionBehavior.addItem(index)
+        }
 
         gravity = UIGravityBehavior(items: allObjects)
         
@@ -53,8 +44,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         print("\(allObjects.count)")
        
     }
-
-
-    
-
+    @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
+        
+    }
 }
