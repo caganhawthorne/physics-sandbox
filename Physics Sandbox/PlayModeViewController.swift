@@ -10,10 +10,16 @@ import UIKit
 
 class PlayModeViewController: UIViewController {
     
+    var dynamicAnimator = UIDynamicAnimator()
     var allObjects : [UIView] = []
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        for index in allObjects {
+            dynamicAnimator.addBehavior(index.dynamicBehavior)
+        }
     }
 
 
