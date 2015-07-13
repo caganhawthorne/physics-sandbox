@@ -23,8 +23,6 @@ class Brick : Item {
     {
         super.init(x: x, y: y, h: 40, w: 20)
         self.backgroundColor = UIColor.redColor()
-        //self.layer.cornerRadius = 10
-        self.clipsToBounds = true
         
         var dynamicBehavior = UIDynamicItemBehavior(items: [self])
         
