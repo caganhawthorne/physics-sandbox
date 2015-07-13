@@ -33,7 +33,7 @@ class Ball: Item {
         dynamicBehavior.resistance = CGFloat(resistance)
         dynamicBehavior.elasticity = CGFloat(elasticity)
         dynamicBehavior.density = CGFloat(density)
-        dynamicBehavior.allowsRotation = false
+        dynamicBehavior.allowsRotation = true
     }
 
     required init(coder aDecoder: NSCoder) {

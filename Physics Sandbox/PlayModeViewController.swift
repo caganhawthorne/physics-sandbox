@@ -20,14 +20,23 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gravity = UIGravityBehavior(items: allObjects)
-        dynamicAnimator.addBehavior(gravity)
+        dynamicAnimator = UIDynamicAnimator(referenceView: view)
+
         for index in allObjects {
             dynObjects.append(index)
             view.addSubview(index)
 
         }
-        collisionBehavior = UICollisionBehavior(items: allObjects)
+        for i in allObjects{
+            dynamicAnimator.addBehavior(i.dynamicBehavior)
+        }
+
+        
+        
+        let items : [UIView] = allObjects
+
+        
+        collisionBehavior = UICollisionBehavior(items: items)
         
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
@@ -36,12 +45,10 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator.addBehavior(collisionBehavior)
 
 
-        
+        gravity = UIGravityBehavior(items: allObjects)
+        dynamicAnimator.addBehavior(gravity)
         
         print("\(allObjects.count)")
-        for index in allObjects{
-        dynamicAnimator.addBehavior(index.dynamicBehavior)
-        }
-
+       
     }
 }
