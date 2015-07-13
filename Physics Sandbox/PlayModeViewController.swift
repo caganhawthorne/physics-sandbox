@@ -12,6 +12,7 @@ class PlayModeViewController: UIViewController {
     
     var dynamicAnimator = UIDynamicAnimator()
     var allObjects : [Item] = []
+    var gravity : UIGravityBehavior!
     
 
     
@@ -20,6 +21,10 @@ class PlayModeViewController: UIViewController {
         for index in allObjects {
         dynamicAnimator.addBehavior(index.dynamicBehavior)
         }
+        for index in allObjects {
+            gravity.addItem(index)
+        }
+        
     }
 
 
