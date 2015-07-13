@@ -28,13 +28,13 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
 
         }
         collisionBehavior = UICollisionBehavior(items: allObjects)
-        
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
         collisionBehavior.collisionDelegate = self
-        
         dynamicAnimator.addBehavior(collisionBehavior)
-
+        for index in allObjects {
+            collisionBehavior.addItem(index)
+        }
 
         
         
@@ -43,5 +43,8 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         dynamicAnimator.addBehavior(index.dynamicBehavior)
         }
 
+    }
+    @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
+        
     }
 }

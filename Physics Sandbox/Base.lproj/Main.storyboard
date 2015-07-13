@@ -115,6 +115,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xDZ-IQ-Ov4" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <panGestureRecognizer minimumNumberOfTouches="1" id="Zp0-3M-D9S">
                     <pressTypeMask key="allowedPressTypes"/>
+                    <connections>
+                        <action selector="onStuffBeingDragged:" destination="nzd-F5-SAZ" id="vOl-PZ-bee"/>
+                    </connections>
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1850" y="142"/>
