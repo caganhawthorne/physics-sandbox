@@ -26,8 +26,11 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         for index in allObjects {
             dynObjects.append(index)
             view.addSubview(index)
+            dynamicAnimator.addBehavior(index.dynamicBehavior)
+
 
         }
+        
         collisionBehavior = UICollisionBehavior(items: allObjects)
         collisionBehavior.translatesReferenceBoundsIntoBoundary = true
         collisionBehavior.collisionMode = .Everything
