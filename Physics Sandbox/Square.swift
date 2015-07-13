@@ -32,7 +32,6 @@ class Square: Item {
         dynamicBehavior.resistance = CGFloat(resistance)
         dynamicBehavior.friction = CGFloat(friction)
         
-        print("square test")
     }
     
     required init(coder aDecoder: NSCoder) {

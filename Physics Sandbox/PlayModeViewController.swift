@@ -47,7 +47,28 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         print("\(allObjects.count)")
        
     }
+    var item : Item!
+
     @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
         
+        
+        if (sender.state == UIGestureRecognizerState.Began) {
+            
+            for i in allObjects {
+                if CGRectContainsPoint(i.frame, sender.locationInView(view)) {
+                item = i
+                }
+            }
+        }
+        
+
+            if let a = item {
+                let panGesture = sender.locationInView(view)
+                a.center = CGPointMake(panGesture.x, panGesture.y)
+                dynamicAnimator.updateItemUsingCurrentState(a)
+            }
+
+        }
     }
-}
+
+
