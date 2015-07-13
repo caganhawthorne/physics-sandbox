@@ -20,8 +20,9 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        gravity = UIGravityBehavior(items: allObjects)
-        dynamicAnimator.addBehavior(gravity)
+        
+        dynamicAnimator = UIDynamicAnimator(referenceView: view)
+
         for index in allObjects {
             dynObjects.append(index)
             view.addSubview(index)
@@ -36,13 +37,12 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
             collisionBehavior.addItem(index)
         }
 
+        gravity = UIGravityBehavior(items: allObjects)
         
+        dynamicAnimator.addBehavior(gravity)
         
         print("\(allObjects.count)")
-        for index in allObjects{
-        dynamicAnimator.addBehavior(index.dynamicBehavior)
-        }
-
+       
     }
     @IBAction func onStuffBeingDragged(sender: UIPanGestureRecognizer) {
         
