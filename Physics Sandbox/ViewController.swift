@@ -25,7 +25,7 @@ class ViewController: UIViewController {
     var ballSelected = false
     var brickSelected = false
     var squareSelected = false
-    var itemsArray : [UIView] = []
+    var itemsArray : [Item] = []
     
     
     
