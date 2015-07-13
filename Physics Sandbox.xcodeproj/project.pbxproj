@@ -55,7 +55,7 @@
 		EF54061E1B502CD70069C5D4 /* Physics SandboxUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Physics SandboxUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF5406221B502CD70069C5D4 /* Physics_SandboxUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Physics_SandboxUITests.swift; sourceTree = "<group>"; };
 		EF5406241B502CD70069C5D4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayModeViewController.swift; sourceTree = "<group>"; };
+		EF5406301B50375A0069C5D4 /* PlayModeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayModeViewController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		EF5406321B5045080069C5D4 /* Ball.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ball.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
