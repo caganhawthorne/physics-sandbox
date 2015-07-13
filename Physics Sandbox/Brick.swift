@@ -15,7 +15,7 @@ class Brick : Item {
     
     var elasticity = 1.0
     var density = 5
-    var resistance = 5
+    var resistance = 1
     var friction = 1
     
     
