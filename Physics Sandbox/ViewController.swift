@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var masterBrick: UIView!
     @IBOutlet weak var masterSquare: UIView!
     
+    var ballSelected = false
+    var brickSelected = false
+    var squareSelected = false
+    
     var itemsArray : [UIView] = []
     
     
@@ -37,18 +41,28 @@ class ViewController: UIViewController {
     }
     
     
-    @IBAction func onObjectDragged(sender: UIPanGestureRecognizer) {
-        let panGesture = sender.locationInView(buildView)
+    @IBAction func screenIsTapped(sender: UITapGestureRecognizer) {
+    
 
-        if CGRectContainsPoint(masterBall.frame, sender.locationInView(optionsView)) {
-            while(sender.state != UIGestureRecognizerState.Ended) {
-                masterBall.center = CGPointMake(panGesture.x, panGesture.y)
+    if CGRectContainsPoint(masterBall.frame, sender.locationInView(view)) {
+        if masterBall.backgroundColor == UIColor.purpleColor() {
+            masterBall.backgroundColor = UIColor.yellowColor()
+            ballSelected = true
+        }
+        else{
+            masterBall.backgroundColor = UIColor.purpleColor()
+            ballSelected = false
+        }
+        
+    }
+        if CGRectContainsPoint(buildView.frame, sender.locationInView(view)) {
+            let tapGesture = sender.locationInView(view)
+
+            if ballSelected {
+                let ball = Ball(x: tapGesture.x, y: tapGesture.y)
+                view.addSubview(ball)
+                itemsArray.append(ball)
             }
-            //masterBall.center =
-            let ball = Ball(x: panGesture.x, y: panGesture.y)
-            itemsArray.append(ball)
-            buildView.addSubview(ball)
-            
         }
     }
     
@@ -56,7 +70,7 @@ class ViewController: UIViewController {
     
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let dvc = segue.destinationViewController as! PlayModeViewController
+        //let dvc = segue.destinationViewController as! PlayModeViewController
         //dvc.
     }
 
