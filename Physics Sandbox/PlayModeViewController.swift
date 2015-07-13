@@ -8,12 +8,13 @@
 
 import UIKit
 
-class PlayModeViewController: UIViewController {
+class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var dynamicAnimator = UIDynamicAnimator()
     var allObjects : [Item] = []
     var gravity : UIGravityBehavior!
     var dynObjects : [UIDynamicItem] = []
+    var collisionBehavior = UICollisionBehavior()
     
 
     
@@ -26,6 +27,14 @@ class PlayModeViewController: UIViewController {
             view.addSubview(index)
 
         }
+        collisionBehavior = UICollisionBehavior(items: allObjects)
+        
+        collisionBehavior.translatesReferenceBoundsIntoBoundary = true
+        collisionBehavior.collisionMode = .Everything
+        collisionBehavior.collisionDelegate = self
+        
+        dynamicAnimator.addBehavior(collisionBehavior)
+
 
         
         
