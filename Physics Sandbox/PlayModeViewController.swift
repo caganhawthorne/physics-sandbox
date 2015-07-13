@@ -12,7 +12,6 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
     
     var dynamicAnimator = UIDynamicAnimator()
     var allObjects : [Item] = []
-    var gravity : UIGravityBehavior!
     var dynObjects : [UIDynamicItem] = []
     var collisionBehavior = UICollisionBehavior()
     
@@ -39,10 +38,12 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
         for index in allObjects {
             collisionBehavior.addItem(index)
         }
-
-        gravity = UIGravityBehavior(items: allObjects)
         
-        dynamicAnimator.addBehavior(gravity)
+        let pushBehavior = UIPushBehavior(items: allObjects, mode: UIPushBehaviorMode.Continuous)
+        pushBehavior.pushDirection = CGVectorMake(0, 4.71238898038)
+        pushBehavior.magnitude = 5
+        dynamicAnimator.addBehavior(pushBehavior)
+        
         
         print("\(allObjects.count)")
        

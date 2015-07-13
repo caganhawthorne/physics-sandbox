@@ -21,7 +21,7 @@ class Brick : Item {
     
     init(x: CGFloat, y: CGFloat)
     {
-        super.init(x: x, y: y, h: 40, w: 20)
+        super.init(x: x, y: y, h: 60, w: 30)
         self.backgroundColor = UIColor.redColor()
         
         var dynamicBehavior = UIDynamicItemBehavior(items: [self])
