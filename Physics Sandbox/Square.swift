@@ -31,6 +31,7 @@ class Square: Item {
         dynamicBehavior.density = CGFloat(density)
         dynamicBehavior.resistance = CGFloat(resistance)
         dynamicBehavior.friction = CGFloat(friction)
+        
         print("square test")
     }
     

@@ -134,7 +134,9 @@ class ViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         let dvc = segue.destinationViewController as! PlayModeViewController
-        dvc.allObjects = itemsArray
+        for item in itemsArray {
+            dvc.allObjects = itemsArray
+        }
     }
 
 
