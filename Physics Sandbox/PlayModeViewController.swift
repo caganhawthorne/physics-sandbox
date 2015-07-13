@@ -13,18 +13,35 @@ class PlayModeViewController: UIViewController {
     var dynamicAnimator = UIDynamicAnimator()
     var allObjects : [Item] = []
     var gravity : UIGravityBehavior!
+    var dynObjects : [UIDynamicItem] = []
     
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        gravity = UIGravityBehavior(items: allObjects)
+        dynamicAnimator.addBehavior(gravity)
         for index in allObjects {
+            dynObjects.append(index)
+            view.addSubview(index)
+
+        }
+
+        
+        
+        print("\(allObjects.count)")
+        for index in allObjects{
         dynamicAnimator.addBehavior(index.dynamicBehavior)
         }
-        for index in allObjects {
+
+    }
+    
+    func addGravity () {
+        for index in dynObjects {
             gravity.addItem(index)
+            
+            
         }
-        
     }
 
 
