@@ -35,14 +35,6 @@ class PlayModeViewController: UIViewController {
         }
 
     }
-    
-    func addGravity () {
-        for index in dynObjects {
-            gravity.addItem(index)
-            
-            
-        }
-    }
 
 
 
