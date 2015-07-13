@@ -47,7 +47,7 @@ class PlayModeViewController: UIViewController, UICollisionBehaviorDelegate {
 
 
         gravity = UIGravityBehavior(items: allObjects)
-        gravity.removeItem(<#T##item: UIDynamicItem##UIDynamicItem#>)
+        
         dynamicAnimator.addBehavior(gravity)
         
         print("\(allObjects.count)")

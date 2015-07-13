@@ -31,10 +31,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        for i in savedItemsArray.items {
-            view.addSubview(i)
-        }
+
         
+
         masterBall.backgroundColor = UIColor.purpleColor()
         masterBall.layer.cornerRadius = 10
         masterBall.clipsToBounds = true
